@@ -15,7 +15,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid="FenceGateKeeper", name="FenceGateKeeper", version="1.7srg-1",dependencies="required-after:FML")
+@Mod(modid="FenceGateKeeper", name="FenceGateKeeper", version="1.7srg-1",dependencies="required-after:FML", useMetadata = true)
 //@NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class FenceGateKeeper
 {
