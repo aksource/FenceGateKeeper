@@ -14,12 +14,12 @@ public class FenceGateTransformer implements IClassTransformer, Opcodes{
     public byte[] transform(String name, String transformedName, byte[] basicClass) {
         if (!FMLLaunchHandler.side().isClient() || !TARGETCLASSNAME.equals(transformedName)) {return basicClass;}
         try {
-            System.out.println("Start FenceGate Transform");
+            FenceGateKeeperCorePlugin.logger.info("Start FenceGate Transform");
             ClassReader classReader = new ClassReader(basicClass);
             ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_MAXS);
             classReader.accept(new CustomVisitor(name, classWriter), 8);
             basicClass = classWriter.toByteArray();
-            System.out.println("Finish FenceGate Transform");
+            FenceGateKeeperCorePlugin.logger.info("Finish FenceGate Transform");
         } catch (Exception e) {
             throw new RuntimeException("failed : FenceGateTransformer loading", e);
         }
@@ -40,7 +40,7 @@ public class FenceGateTransformer implements IClassTransformer, Opcodes{
         public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
             if (targetMethodName.equals(FMLDeobfuscatingRemapper.INSTANCE.mapMethodName(owner, name, desc))) {
                 MethodVisitor mv = super.visitMethod(access, name, desc, signature, exceptions);
-                System.out.println("insert false return");
+                FenceGateKeeperCorePlugin.logger.info("insert false return");
                 mv.visitInsn(ICONST_0);
                 mv.visitInsn(IRETURN);
                 return mv;
