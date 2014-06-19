@@ -17,7 +17,7 @@ public class FenceGateKeeperModContainer extends DummyModContainer{
         ModMetadata meta = getMetadata();
         meta.modId = "FenceGateKeeper";
         meta.name = "FenceGateKeeper";
-        meta.version = "1.0.0";
+        meta.version = "@VERSION@";
         meta.authorList = Arrays.asList("takanasayo", "A.K.");
         meta.description = "Prevent mob to go out from fencegate";
         meta.url = "";
