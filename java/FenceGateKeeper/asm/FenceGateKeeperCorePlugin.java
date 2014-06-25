@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 /**
  * Created by A.K. on 14/03/15.
  */
-@IFMLLoadingPlugin.MCVersion("1.7.2")
 public class FenceGateKeeperCorePlugin implements IFMLLoadingPlugin{
     public static Logger logger = Logger.getLogger("FenceGateKeeper");
     @Override
