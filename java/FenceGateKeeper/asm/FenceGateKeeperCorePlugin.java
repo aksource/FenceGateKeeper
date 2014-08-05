@@ -2,7 +2,6 @@ package FenceGateKeeper.asm;
 
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
-import java.io.File;
 import java.util.Map;
 import java.util.logging.Logger;
 
