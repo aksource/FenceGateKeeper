@@ -1,8 +1,8 @@
 package FenceGateKeeper.asm;
 
-import cpw.mods.fml.common.asm.transformers.deobf.FMLDeobfuscatingRemapper;
-import cpw.mods.fml.relauncher.FMLLaunchHandler;
 import net.minecraft.launchwrapper.IClassTransformer;
+import net.minecraftforge.fml.common.asm.transformers.deobf.FMLDeobfuscatingRemapper;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import org.objectweb.asm.*;
 
 /**
@@ -35,7 +35,7 @@ public class FenceGateTransformer implements IClassTransformer, Opcodes{
             super(Opcodes.ASM4,cv);
             this.owner = owner;
         }
-        static final String targetMethodName = "func_149655_b";
+        static final String targetMethodName = "func_176205_b";//isPassable(old:getBlocksMovement)
         @Override
         public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
             if (targetMethodName.equals(FMLDeobfuscatingRemapper.INSTANCE.mapMethodName(owner, name, desc))) {
