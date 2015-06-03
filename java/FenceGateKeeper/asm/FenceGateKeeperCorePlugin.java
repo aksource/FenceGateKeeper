@@ -1,15 +1,16 @@
 package FenceGateKeeper.asm;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
-import java.util.logging.Logger;
 
 /**
  * Created by A.K. on 14/03/15.
  */
 public class FenceGateKeeperCorePlugin implements IFMLLoadingPlugin{
-    public static Logger logger = Logger.getLogger("FenceGateKeeper");
+    public static Logger logger = LogManager.getLogger("FenceGateKeeper");
     @Override
     public String[] getASMTransformerClass() {
         return new String[]{"FenceGateKeeper.asm.FenceGateTransformer"};
